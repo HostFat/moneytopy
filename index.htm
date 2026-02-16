@@ -4,419 +4,411 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>List of Financial Services for Paraguay Residency</title>
-    <meta name="description" content="Updated list of financial services, bank accounts, and cards that require KYC but accept Cedula or PY residency. Primarily for European citizens.">
     <style>
-        :root {
-            --primary: #1a5fb4;
-            --primary-light: #2d7dd2;
-            --bg: #f5f7fa;
-            --card-bg: #ffffff;
-            --text: #1e293b;
-            --text-light: #475569;
-            --border: #e2e8f0;
-            --shadow: 0 4px 12px rgba(0,0,0,0.08);
-        }
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-            background: var(--bg);
-            color: var(--text);
-            margin: 0;
-            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f4f6f9;
+            color: #333;
             line-height: 1.6;
-        }
-        header {
-            background: linear-gradient(135deg, var(--primary), var(--primary-light));
-            color: white;
-            padding: 2rem 1rem;
-            text-align: center;
-            box-shadow: var(--shadow);
-        }
-        header h1 {
-            margin: 0;
-            font-size: 1.8rem;
-            font-weight: 600;
-        }
-        header p {
-            margin: 0.8rem 0 0;
-            font-size: 1.1rem;
-            opacity: 0.95;
-        }
-        main {
-            max-width: 1000px;
+            max-width: 960px;
             margin: 0 auto;
-            padding: 1.5rem 1rem;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 10px;
         }
         .intro {
-            background: var(--card-bg);
-            padding: 1.5rem;
-            border-radius: 12px;
-            box-shadow: var(--shadow);
-            margin-bottom: 2rem;
-            font-size: 1rem;
-            border-left: 5px solid var(--primary);
+            text-align: center;
+            color: #555;
+            font-size: 1.1rem;
+            margin-bottom: 30px;
         }
-        .services {
-            display: grid;
-            gap: 1.2rem;
+        #toggleAll {
+            display: block;
+            margin: 0 auto 30px;
+            padding: 12px 30px;
+            font-size: 1.2rem;
+            background: #0066cc;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+        #toggleAll:hover {
+            background: #0055aa;
         }
         details {
-            background: var(--card-bg);
-            border: 1px solid var(--border);
-            border-radius: 12px;
+            background: white;
+            border: 1px solid #e0e0e0;
+            border-radius: 10px;
+            margin-bottom: 12px;
             overflow: hidden;
-            box-shadow: var(--shadow);
-            transition: all 0.3s ease;
-        }
-        details:hover {
-            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+            box-shadow: 0 2px 6px rgba(0,0,0,0.05);
         }
         summary {
-            padding: 1.3rem 1.5rem;
+            padding: 16px 20px;
             font-weight: 600;
             font-size: 1.15rem;
-            background: linear-gradient(to right, var(--primary), var(--primary-light));
-            color: white;
             cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
             user-select: none;
+            list-style: none;
         }
-        summary::-webkit-details-marker {
-            display: none;
-        }
-        summary::after {
-            content: "↓";
+        summary::-webkit-details-marker { display: none; }
+        summary::before {
+            content: "▶";
+            margin-right: 10px;
             font-size: 1.2rem;
-            transition: transform 0.3s ease;
+            transition: transform 0.2s;
         }
-        details[open] summary::after {
-            transform: rotate(180deg);
+        details[open] summary::before {
+            content: "▼";
         }
         .content {
-            padding: 1.5rem;
-            font-size: 0.98rem;
-            color: var(--text-light);
-            border-top: 1px solid var(--border);
+            padding: 0 20px 20px;
         }
-        .content p {
-            margin: 0.8rem 0;
+        .content p, .content ul {
+            margin: 12px 0;
         }
         .content ul {
-            padding-left: 1.4rem;
-            margin: 0.8rem 0;
+            padding-left: 30px;
         }
         .content a {
-            color: var(--primary);
+            color: #0066cc;
             word-break: break-all;
+        }
+        .content a:hover {
             text-decoration: underline;
         }
-        .content strong {
-            color: var(--text);
-        }
-        footer {
-            text-align: center;
-            padding: 3rem 1rem 2rem;
-            font-size: 0.95rem;
-            color: #64748b;
-        }
-        @media (prefers-color-scheme: dark) {
-            :root {
-                --bg: #0f172a;
-                --card-bg: #1e293b;
-                --text: #f1f5f9;
-                --text-light: #cbd5e1;
-                --border: #334155;
-            }
-        }
-        @media (max-width: 640px) {
-            header h1 { font-size: 1.6rem; }
-            header p { font-size: 1rem; }
-            summary { font-size: 1.1rem; padding: 1.1rem 1.2rem; }
-            .content { padding: 1.2rem; }
+        strong {
+            color: #222;
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>List of Financial Services for Paraguay Residency</h1>
-        <p>Accounts and cards that require KYC but accept Cedula or PY residency<br>Material primarily for European citizens • Continuously updated</p>
-    </header>
 
-    <main>
-        <section class="intro">
-            <p>List of financial services, bank accounts, and cards that require KYC but accept Cedula or PY residency for account opening or conversion.<br>Material primarily for European citizens.<br>This document is continuously updated.</p>
-        </section>
+    <h1>List of Financial Services for Paraguay Residency</h1>
+    <p class="intro">
+        Accounts and cards that require KYC but accept Cedula or PY residency.<br>
+        Material primarily for European citizens • Continuously updated
+    </p>
 
-        <section class="services">
-            <details open>
-                <summary>Schwab International - Nominal USD Account - With passport and proof of residency in py</summary>
-                <div class="content">
-                    <p><a href="https://international.schwab.com/" target="_blank">https://international.schwab.com</a></p>
-                    <p>Requirements:<br>- Proof of residency in Paraguay, such as a bank statement<br>- Passport</p>
-                    <p>Benefits<br>- Free registered US account with the ability to receive and send ACH.<br>- You can also receive SEPA transfers to a European bank, which are then converted to USD with a 1% fee.<br><a href="https://international.schwab.com/resource/instructions-to-transfer-money-to-your-schwab-account" target="_blank">https://international.schwab.com/resource/instructions-to-transfer-money-to-your-schwab-account</a><br>- Non-contactless debit card; you can withdraw cash from all ATMs at market exchange rates, and Schwab reimburses the ATM withdrawal fee.</p>
-                </div>
-            </details>
+    <button id="toggleAll">Open All</button>
 
-            <details>
-                <summary>Monerium - Nominal EUR Account with Cedula (directly)</summary>
-                <div class="content">
-                    <p><a href="https://monerium.app/" target="_blank">https://monerium.app</a></p>
-                    <p>A bank account that can receive and send to third-party accounts, which can be opened with a Cedula and PY residency.</p>
-                    <p>The use of a wallet as a metamask is required, because upon deposit, the funds are converted into a proprietary EUR stablecoin, and upon sending, a conversion always occurs. Both deposits and sendings are 1:1 with no fees.</p>
-                    <p>Therefore, it is also useful for receiving payments from third parties, for example, as a freelancer, without sharing any european ID data.</p>
-                </div>
-            </details>
+    <details>
+        <summary>Schwab International - Nominal USD Account - With passport and proof of residency in py</summary>
+        <div class="content">
+            <p><a href="https://international.schwab.com/" target="_blank">https://international.schwab.com/</a></p>
+            <p><strong>Requirements:</strong></p>
+            <ul>
+                <li>Proof of residency in Paraguay, such as a bank statement</li>
+                <li>Passport</li>
+            </ul>
+            <p><strong>Benefits</strong></p>
+            <ul>
+                <li>Free registered US account with the ability to receive and send ACH.</li>
+                <li>You can also receive SEPA transfers to a European bank, which are then converted to USD with a 1% fee.</li>
+                <li><a href="https://international.schwab.com/resource/instructions-to-transfer-money-to-your-schwab-account" target="_blank">https://international.schwab.com/resource/instructions-to-transfer-money-to-your-schwab-account</a></li>
+                <li>Non-contactless debit card; you can withdraw cash from all ATMs at market exchange rates, and Schwab reimburses the ATM withdrawal fee.</li>
+            </ul>
+        </div>
+    </details>
 
-            <details>
-                <summary>Mtpelerin - Nominal EUR Account with Cedula (directly)</summary>
-                <div class="content">
-                    <p><a href="https://app.mtpelerin.com/" target="_blank">https://app.mtpelerin.com</a></p>
-                    <p>Another EUR account, which can be opened with cedula and PY residency.</p>
-                    <p>However, when withdrawing EUR over approximately 548 euros, there is a 1.3% fee, which can be reduced by purchasing tokens.</p>
-                    <p>Upon receiving, you also have to choose which token to automatically convert to. You can choose Bitcoin or other tokens, including stablecoins tied to the euro.</p>
-                </div>
-            </details>
+    <details>
+        <summary>Monerium - Nominal EUR Account with Cedula (directly)</summary>
+        <div class="content">
+            <p><a href="https://monerium.app" target="_blank">https://monerium.app</a></p>
+            <p>A bank account that can receive and send to third-party accounts, which can be opened with a Cedula and PY residency.</p>
+            <p>The use of a wallet as a metamask is required, because upon deposit, the funds are converted into a proprietary EUR stablecoin, and upon sending, a conversion always occurs. Both deposits and sendings are 1:1 with no fees.</p>
+            <p>Therefore, it is also useful for receiving payments from third parties, for example, as a freelancer, without sharing any european ID data.</p>
+        </div>
+    </details>
 
-            <details>
-                <summary>Wise - Nominal USD / EUR Accounts - With EU passport and change residency to PY after</summary>
-                <div class="content">
-                    <p><a href="https://wise.com/" target="_blank">https://wise.com</a></p>
-                    <p>The account must be opened as a European resident, the virtual card must be activated, and possibly the physical one, "and later", the residency must be changed to Paraguay.</p>
-                    <p>It will no longer be possible to renew cards, but existing ones should remain functional.</p>
-                    <p>Opened bank accounts will remain active.</p>
-                    <p>The USD account allows you to:<br>- send ACH with a flat fee of $1.13<br>- receive ACH with zero fees</p>
-                    <p>Receiving limits:<br>$20,000,000</p>
-                    <p>Movement limits:<br>$35,000,000</p>
-                    <p>The EUR account allows you to receive and send with zero fees.</p>
-                </div>
-            </details>
+    <details>
+        <summary>Mtpelerin - Nominal EUR Account with Cedula (directly)</summary>
+        <div class="content">
+            <p><a href="https://app.mtpelerin.com" target="_blank">https://app.mtpelerin.com</a></p>
+            <p>Another EUR account, which can be opened with cedula and PY residency.</p>
+            <p>However, when withdrawing EUR over approximately 548 euros, there is a 1.3% fee, which can be reduced by purchasing tokens.</p>
+            <p>Upon receiving, you also have to choose which token to automatically convert to. You can choose Bitcoin or other tokens, including stablecoins tied to the euro.</p>
+        </div>
+    </details>
 
-            <details>
-                <summary>Grabrfi - Nominal USD - ACH in free / out 0.3% fee</summary>
-                <div class="content">
-                    <p><a href="https://grabrfi.com/" target="_blank">https://grabfi.com</a></p>
-                    <p>Fee: <a href="https://help.grabrfi.com/en/content/full-schedule-of-fees" target="_blank">https://help.grabrfi.com/en/content/full-schedule-of-fees</a></p>
-                </div>
-            </details>
+    <details>
+        <summary>Wise - Nominal USD / EUR Accounts - With EU passport and change residency to PY after</summary>
+        <div class="content">
+            <p><a href="https://wise.com" target="_blank">https://wise.com</a></p>
+            <p>The account must be opened as a European resident, the virtual card must be activated, and possibly the physical one, "and later", the residency must be changed to Paraguay.</p>
+            <p>It will no longer be possible to renew cards, but existing ones should remain functional.</p>
+            <p>Opened bank accounts will remain active.</p>
+            <p>The USD account allows you to:</p>
+            <ul>
+                <li>send ACH with a flat fee of $1.13</li>
+                <li>receive ACH with zero fees</li>
+            </ul>
+            <p>Receiving limits: $20,000,000</p>
+            <p>Movement limits: $35,000,000</p>
+            <p>The EUR account allows you to receive and send with zero fees.</p>
+        </div>
+    </details>
 
-            <details>
-                <summary>Paysera - Nominal EUR Accounts - With EU passport and change residency to PY after</summary>
-                <div class="content">
-                    <p><a href="https://www.paysera.com/" target="_blank">https://www.paysera.com</a></p>
-                    <p>The account must be opened as a European resident, and then converted to Paraguayan residency.</p>
-                    <p>When changing residence, do not change your identity document; keep your European passport, or you will be asked for another document as an immigrant to Europe.</p>
-                    <p>Ordering a physical or virtual card before changing residence may allow you to use the card afterwards, but this has not been tested.</p>
-                </div>
-            </details
+    <details>
+        <summary>Grabrfi - Nominal USD - ACH in free / out 0.3% fee</summary>
+        <div class="content">
+            <p><a href="https://grabfi.com" target="_blank">https://grabfi.com</a></p>
+            <p>Fee: <a href="https://help.grabrfi.com/en/content/full-schedule-of-fees" target="_blank">https://help.grabrfi.com/en/content/full-schedule-of-fees</a></p>
+        </div>
+    </details>
 
-            <details>
-                <summary>Zen - Nominal EUR Accounts - With EU passport and change residency to PY after</summary>
-                <div class="content">
-                    <p><a href="https://www.zen.com/" target="_blank">https://www.zen.com</a></p>
-                    <p>The account must be opened as a European resident, the virtual card activated, and possibly the physical one, "and later", your residency must be changed to Paraguay.</p>
-                    <p>You can also top up with cryptocurrencies - 0.5% fee</p>
-                    <p>EUR transfer to another account: 0.25 EUR fixed fee</p>
-                    <p>Fee details: https://www.zen.com/files/pricing/individual_pricing.pdf</p>
-                </div>
-            </details>
+    <details>
+        <summary>Paysera - Nominal EUR Accounts - With EU passport and change residency to PY after</summary>
+        <div class="content">
+            <p><a href="https://www.paysera.com" target="_blank">https://www.paysera.com</a></p>
+            <p>The account must be opened as a European resident, and then converted to Paraguayan residency.</p>
+            <p>When changing residence, do not change your identity document; keep your European passport, or you will be asked for another document as an immigrant to Europe.</p>
+            <p>Ordering a physical or virtual card before changing residence may allow you to use the card afterwards, but this has not been tested.</p>
+        </div>
+    </details>
 
-            <details>
-                <summary>Paysend - Remittance service with good exchange rate</summary>
-                <div class="content">
-                    <p><a href="https://paysend.com/" target="_blank">https://paysend.com</a></p>
-                    <p>Better exchange rate than WU and Remitly.</p>
-                    <p>Requires a European phone number.</p>
-                    <p>This is the simplest and quickest service.</p>
-                    <p>Once certain thresholds are exceeded, they may begin requesting more documents, including the Cedula.</p>
-                </div>
-            </details>
+    <details>
+        <summary>Zen - Nominal EUR Accounts - With EU passport and change residency to PY after</summary>
+        <div class="content">
+            <p><a href="https://www.zen.com" target="_blank">https://www.zen.com</a></p>
+            <p>The account must be opened as a European resident, the virtual card activated, and possibly the physical one, "and later", your residency must be changed to Paraguay.</p>
+            <p>You can also top up with cryptocurrencies - 0.5% fee</p>
+            <p>EUR transfer to another account: 0.25 EUR fixed fee</p>
+            <p>Fee details: <a href="https://www.zen.com/files/pricing/individual_pricing.pdf" target="_blank">https://www.zen.com/files/pricing/individual_pricing.pdf</a></p>
+        </div>
+    </details>
 
-            <details>
-                <summary>Remitly - Remittance service</summary>
-                <div class="content">
-                    <p><a href="https://www.remitly.com/" target="_blank">https://www.remitly.com</a></p>
-                    <p>Another remittance service, but usually the exchange rate from EUR is better on Paysent.</p>
-                    <p>It can be good if you need to exchange other currencies than EUR to PYG.</p>
-                </div>
-            </details>
+    <details>
+        <summary>Paysend - Remittance service with good exchange rate</summary>
+        <div class="content">
+            <p><a href="https://paysend.com" target="_blank">https://paysend.com</a></p>
+            <p>Better exchange rate than WU and Remitly.</p>
+            <p>Requires a European phone number.</p>
+            <p>This is the simplest and quickest service.</p>
+            <p>Once certain thresholds are exceeded, they may begin requesting more documents, including the Cedula.</p>
+        </div>
+    </details>
 
-            <details>
-                <summary>Revolut - Nominal EUR Account - You can set your Paraguayan tax code, but your residency can only be european</summary>
-                <div class="content">
-                    <p><a href="https://revolut.com/" target="_blank">https://revolut.com</a></p>
-                    <p>Useful for sending to local bank cards in Paraguay, with a commission of approximately 1%.</p>
-                </div>
-            </details>
+    <details>
+        <summary>Remitly - Remittance service</summary>
+        <div class="content">
+            <p><a href="https://www.remitly.com" target="_blank">https://www.remitly.com</a></p>
+            <p>Another remittance service, but usually the exchange rate from EUR is better on Paysent.</p>
+            <p>It can be good if you need to exchange other currencies than EUR to PYG.</p>
+        </div>
+    </details>
 
-            <details>
-                <summary>Utoppia - Nominal USD Account - Zero ACH Receiving Fee - $1 Sending Fee</summary>
-                <div class="content">
-                    <p><a href="https://www.utoppia.com/" target="_blank">https://www.utoppia.com</a></p>
-                    <p>Various Fees: <a href="https://www.utoppia.com/pricing" target="_blank">https://www.utoppia.com/pricing</a></p>
-                </div>
-            </details>
+    <details>
+        <summary>Revolut - Nominal EUR Account - You can set your Paraguayan tax code, but your residency can only be european</summary>
+        <div class="content">
+            <p><a href="https://revolut.com" target="_blank">https://revolut.com</a></p>
+            <p>Useful for sending to local bank cards in Paraguay, with a commission of approximately 1%.</p>
+        </div>
+    </details>
 
-            <details>
-                <summary>Kraken - Crypto exchange</summary>
-                <div class="content">
-                    <p><a href="https://www.kraken.com/" target="_blank">https://www.kraken.com</a></p>
-                    <p>- Good for receiving EUR from your accounts and converting to stablecoins and vice versa</p>
-                </div>
-            </details>
+    <details>
+        <summary>Utoppia - Nominal USD Account - Zero ACH Receiving Fee - $1 Sending Fee</summary>
+        <div class="content">
+            <p><a href="https://www.utoppia.com" target="_blank">https://www.utoppia.com</a></p>
+            <p>Various Fees: <a href="https://www.utoppia.com/pricing" target="_blank">https://www.utoppia.com/pricing</a></p>
+        </div>
+    </details>
 
-            <details>
-                <summary>P2P Markets:</summary>
-                <div class="content">
-                    <p>- Binance<br><a href="https://www.binance.com/" target="_blank">https://www.binance.com</a><br>Good for the USDT/BTC -> PYG p2p market</p>
-                    <p>- OKX<br><a href="https://www.okx.com/" target="_blank">https://www.okx.com/</a></p>
-                    <p>- Bybit<br><a href="https://www.bybit.com/" target="_blank">https://www.bybit.com</a></p>
-                    <p>- El Dorado<br><a href="https://eldorado.io/" target="_blank">https://eldorado.io</a></p>
-                    <p>- BingX<br><a href="https://bingx.com/" target="_blank">https://bingx.com</a></p>
-                    <p>Where to check out various offers:<br><a href="https://yadio.io/market.html" target="_blank">https://yadio.io/market.html</a><br><a href="https://p2p.army/" target="_blank">https://p2p.army/</a></p>
-                </div>
-            </details>
+    <details>
+        <summary>Kraken - Crypto exchange</summary>
+        <div class="content">
+            <p><a href="https://www.kraken.com" target="_blank">https://www.kraken.com</a></p>
+            <p>- Good for receiving EUR from your accounts and converting to stablecoins and vice versa</p>
+        </div>
+    </details>
 
-            <details>
-                <summary>Interactive Brokers</summary>
-                <div class="content">
-                    <p>Trading account for receiving EUR or USD and obtaining the best market exchange rate between the two, and sending back to your accounts.</p>
-                    <p><a href="https://www.interactivebrokers.com/" target="_blank">https://www.interactivebrokers.com</a></p>
-                    <p>It's a good idea to make a few small transactions every now and then, not just in and out, to avoid the risk of account closure.</p>
-                    <p>You can send a free outgoing ACH transaction once a month; after that, the cost is $1 per transaction.</p>
-                </div>
-            </details>
+    <details>
+        <summary>P2P Markets</summary>
+        <div class="content">
+            <ul>
+                <li>Binance <a href="https://www.binance.com" target="_blank">https://www.binance.com</a><br>Good for the USDT/BTC -> PYG p2p market</li>
+                <li>OKX <a href="https://www.okx.com/" target="_blank">https://www.okx.com/</a></li>
+                <li>Bybit <a href="https://www.bybit.com" target="_blank">https://www.bybit.com</a></li>
+                <li>El Dorado <a href="https://eldorado.io" target="_blank">https://eldorado.io</a></li>
+                <li>BingX <a href="https://bingx.com" target="_blank">https://bingx.com</a></li>
+            </ul>
+            <p>Where to check out various offers:</p>
+            <p><a href="https://yadio.io/market.html" target="_blank">https://yadio.io/market.html</a><br>
+            <a href="https://p2p.army/" target="_blank">https://p2p.army/</a></p>
+        </div>
+    </details>
 
-            <details>
-                <summary>Fluidkey - USD / EUR Account</summary>
-                <div class="content">
-                    <p><a href="https://www.fluidkey.com/" target="_blank">https://www.fluidkey.com</a></p>
-                    <p>Free monthly transfers up to $3,000, then 0.3%.</p>
-                    <p>By increasing your account score, making transfers, or having a large deposit, you can transfer up to $20,000 without a fee: https://docs.fluidkey.com/readme/bank</p>
-                    <p>USD deposits are converted to USDC, and EUR deposits to EURC.</p>
-                </div>
-            </details>
+    <details>
+        <summary>Interactive Brokers</summary>
+        <div class="content">
+            <p><a href="https://www.interactivebrokers.com" target="_blank">https://www.interactivebrokers.com</a></p>
+            <p>Trading account for receiving EUR or USD and obtaining the best market exchange rate between the two, and sending back to your accounts.</p>
+            <p>It's a good idea to make a few small transactions every now and then, not just in and out, to avoid the risk of account closure.</p>
+            <p>You can send a free outgoing ACH transaction once a month; after that, the cost is $1 per transaction.</p>
+        </div>
+    </details>
 
-            <details>
-                <summary>Sling - USD/EUR Account with 0.1% fee / Zero FX Fee Card</summary>
-                <div class="content">
-                    <p><a href="https://sling.money/" target="_blank">https://sling.money</a></p>
-                    <p>- USD/EUR/MX weight deposit fee: 0.1%<br>- Zero FX fees</p>
-                    <p>Limits:<br>- $7,500 week<br>- $20.000 per month<br>- Daily card usage: $2,000</p>
-                    <p>Deposits in EURC/USDC/USDP on the Solana network converted to USD or EUR at zero fees.</p>
-                </div>
-            </details>
+    <details>
+        <summary>Fluidkey - USD / EUR Account</summary>
+        <div class="content">
+            <p><a href="https://www.fluidkey.com" target="_blank">https://www.fluidkey.com</a></p>
+            <p>Free monthly transfers up to $3,000, then 0.3%.</p>
+            <p>By increasing your account score, making transfers, or having a large deposit, you can transfer up to $20,000 without a fee: <a href="https://docs.fluidkey.com/readme/bank" target="_blank">https://docs.fluidkey.com/readme/bank</a></p>
+            <p>USD deposits are converted to USDC, and EUR deposits to EURC.</p>
+        </div>
+    </details>
 
-            <details>
-                <summary>Ready - Zero FX fee card + 0.5% cashback</summary>
-                <div class="content">
-                    <p><a href="https://www.ready.co/" target="_blank">https://www.ready.co</a></p>
-                    <p>Deposits in:<br>- USDC zero fee<br>- Other cryptocurrencies approximately 0.08% fee</p>
-                </div>
-            </details>
+    <details>
+        <summary>Sling - USD/EUR Account with 0.1% fee / Zero FX Fee Card</summary>
+        <div class="content">
+            <p><a href="https://sling.money" target="_blank">https://sling.money</a></p>
+            <ul>
+                <li>USD/EUR/MX weight deposit fee: 0.1%</li>
+                <li>Zero FX fees</li>
+            </ul>
+            <p>Limits:</p>
+            <ul>
+                <li>$7,500 week</li>
+                <li>$20.000 per month</li>
+                <li>Daily card usage: $2,000</li>
+            </ul>
+            <p>Deposits in EURC/USDC/USDP on the Solana network converted to USD or EUR at zero fees.</p>
+        </div>
+    </details>
 
-            <details>
-                <summary>Duo - USD / EUR account (and others)</summary>
-                <div class="content">
-                    <p><a href="https://due.network/" target="_blank">https://due.network</a></p>
-                    <p>Non-denominated EUR account that can receive from anyone. - Fee: €0.90</p>
-                    <p>Nominal USD account. ACH receiving fee: $1.50 + 0.2%</p>
-                    <p>You can also send fiat to other accounts:</p>
-                    <p>EUR fee: €0.90 fixed fee</p>
-                    <p>USD fee examples:<br>- For $10: $0.53 fee<br>- For $100: $0.80 fee<br>- For $1,000: $3.50 fee</p>
-                </div>
-            </details>
+    <details>
+        <summary>Ready - Zero FX fee card + 0.5% cashback</summary>
+        <div class="content">
+            <p><a href="https://www.ready.co" target="_blank">https://www.ready.co</a></p>
+            <p>Deposits in:</p>
+            <ul>
+                <li>USDC zero fee</li>
+                <li>Other cryptocurrencies approximately 0.08% fee</li>
+            </ul>
+        </div>
+    </details>
 
-            <details>
-                <summary>Uglycash - USD and EUR account - Card with 1% FX fee but 1% cashback in another token</summary>
-                <div class="content">
-                    <p><a href="https://ugly.cash/" target="_blank">https://ugly.cash</a></p>
-                    <p>- Personal but non-nominal EUR account, zero deposit fee (for now), good exchange rate.<br>You can only receive funds from business accounts or personal accounts in your name.</p>
-                    <p>- Personal USD account: fixed fee of $2</p>
-                    <p>- Deposit conversion of USDT/USDT and other stablecoins at 1:1</p>
-                    <p>- Earn: 8%</p>
-                    <p>- Card with 1% FX fee but 1% cashback in other tokens</p>
-                </div>
-            </details>
+    <details>
+        <summary>Duo - USD / EUR account (and others)</summary>
+        <div class="content">
+            <p><a href="https://due.network" target="_blank">https://due.network</a></p>
+            <p>Non-denominated EUR account that can receive from anyone. - Fee: €0.90</p>
+            <p>Nominal USD account. ACH receiving fee: $1.50 + 0.2%</p>
+            <p>You can also send fiat to other accounts:</p>
+            <p>EUR fee: €0.90 fixed fee</p>
+            <p>USD fee examples:</p>
+            <ul>
+                <li>For $10: $0.53 fee</li>
+                <li>For $100: $0.80 fee</li>
+                <li>For $1,000: $3.50 fee</li>
+            </ul>
+        </div>
+    </details>
 
-            <details>
-                <summary>Belo</summary>
-                <div class="content">
-                    <p><a href="https://www.belo.app/" target="_blank">https://www.belo.app</a></p>
-                    <p>Argentine app that allows you to directly convert bitcoin or stablecoins to PYG on PY accounts.</p>
-                    <p>The exchange rate isn't the best, but it can be convenient.</p>
-                    <p>On weekdays, a transfer can take two hours; on holidays or weekends, it can take up to a day or two.</p>
-                </div>
-            </details>
+    <details>
+        <summary>Uglycash - USD and EUR account - Card with 1% FX fee but 1% cashback in another token</summary>
+        <div class="content">
+            <p><a href="https://ugly.cash" target="_blank">https://ugly.cash</a></p>
+            <ul>
+                <li>Personal but non-nominal EUR account, zero deposit fee (for now), good exchange rate.<br>You can only receive funds from business accounts or personal accounts in your name.</li>
+                <li>Personal USD account: fixed fee of $2</li>
+                <li>Deposit conversion of USDT/USDT and other stablecoins at 1:1</li>
+                <li>Earn: 8%</li>
+                <li>Card with 1% FX fee but 1% cashback in other tokens</li>
+            </ul>
+        </div>
+    </details>
 
-            <details>
-                <summary>Fuse - Zero FX Fee Card (iOS only for now)</summary>
-                <div class="content">
-                    <p><a href="https://fusewallet.com/" target="_blank">https://fusewallet.com</a></p>
-                    <p>Since I don't have an iPhone, I can't test it. More details here:<br><a href="https://fusewallet.com/support" target="_blank">https://fusewallet.com/support</a></p>
-                </div>
-            </details>
+    <details>
+        <summary>Belo</summary>
+        <div class="content">
+            <p><a href="https://www.belo.app" target="_blank">https://www.belo.app</a></p>
+            <p>Argentine app that allows you to directly convert bitcoin or stablecoins to PYG on PY accounts.</p>
+            <p>The exchange rate isn't the best, but it can be convenient.</p>
+            <p>On weekdays, a transfer can take two hours; on holidays or weekends, it can take up to a day or two.</p>
+        </div>
+    </details>
 
-            <details>
-                <summary>GnosisPay - Zero FX Fee Card - Doesn't currently support PY residency</summary>
-                <div class="content">
-                    <p><a href="https://gnosispay.com/" target="_blank">https://gnosispay.com</a></p>
-                </div>
-            </details>
+    <details>
+        <summary>Fuse - Zero FX Fee Card (iOS only for now)</summary>
+        <div class="content">
+            <p><a href="https://fusewallet.com" target="_blank">https://fusewallet.com</a></p>
+            <p>Since I don't have an iPhone, I can't test it. More details here:</p>
+            <p><a href="https://fusewallet.com/support" target="_blank">https://fusewallet.com/support</a></p>
+        </div>
+    </details>
 
-            <details>
-                <summary>Tria - Zero FX Fee USD Card + 1.5% Cashback</summary>
-                <div class="content">
-                    <p><a href="https://tria.so/" target="_blank">https://tria.so</a></p>
-                    <p>Card price: $20 annually (in the future: $25 annually)</p>
-                </div>
-            </details>
+    <details>
+        <summary>GnosisPay - Zero FX Fee Card - Doesn't currently support PY residency</summary>
+        <div class="content">
+            <p><a href="https://gnosispay.com" target="_blank">https://gnosispay.com</a></p>
+        </div>
+    </details>
 
-            <details>
-                <summary>Ether.fi - USD Card with 1% FX but 3% Cashback (within certain limits)</summary>
-                <div class="content">
-                    <p><a href="https://ether.fi/" target="_blank">https://ether.fi</a></p>
-                    <p>Information on the 1% FX fee:<br><a href="https://help.ether.fi/en/articles/304414-what-s-the-foreign-exchange-fx-rate-on-cash-purchase-transactions" target="_blank">https://help.ether.fi/en/articles/304414-what-s-the-foreign-exchange-fx-rate-on-cash-purchase-transactions</a></p>
-                    <p>Information about the Cashback:<br><a href="https://help.ether.fi/en/articles/262374-how-does-cashback-work" target="_blank">https://help.ether.fi/en/articles/262374-how-does-cashback-work</a></p>
-                </div>
-            </details>
+    <details>
+        <summary>Tria - Zero FX Fee USD Card + 1.5% Cashback</summary>
+        <div class="content">
+            <p><a href="https://tria.so" target="_blank">https://tria.so</a></p>
+            <p>Card price: $20 annually (in the future: $25 annually)</p>
+        </div>
+    </details>
 
-            <details>
-                <summary>Lists of other cards with cashback potential. If the cashback is 1% or slightly higher, it practically covers the FX fee, which is often between 1% and 1.5%:</summary>
-                <div class="content">
-                    <p><a href="https://www.cryptocards.so" target="_blank">https://www.cryptocards.so</a><br><a href="https://crypto-card-aggregator.vercel.app/" target="_blank">https://crypto-card-aggregator.vercel.app</a></p>
-                </div>
-            </details>
+    <details>
+        <summary>Ether.fi - USD Card with 1% FX but 3% Cashback (within certain limits)</summary>
+        <div class="content">
+            <p><a href="https://ether.fi" target="_blank">https://ether.fi</a></p>
+            <p>Information on the 1% FX fee:</p>
+            <p><a href="https://help.ether.fi/en/articles/304414-what-s-the-foreign-exchange-fx-rate-on-cash-purchase-transactions" target="_blank">https://help.ether.fi/en/articles/304414-what-s-the-foreign-exchange-fx-rate-on-cash-purchase-transactions</a></p>
+            <p>Information about the Cashback:</p>
+            <p><a href="https://help.ether.fi/en/articles/262374-how-does-cashback-work" target="_blank">https://help.ether.fi/en/articles/262374-how-does-cashback-work</a></p>
+        </div>
+    </details>
 
-            <details>
-                <summary>Bitwage - Invoicing service from Paraguay - 2.5%/3% fee for receiving PYG</summary>
-                <div class="content">
-                    <p><a href="https://bitwage.com/" target="_blank">https://bitwage.com</a></p>
-                    <p>Useful for avoiding setting up an LLC in the US.</p>
-                    <p>You can also receive EUR and send it to another EUR account; the fee in this case should be 1%.</p>
-                    <p>You can only receive funds from business or crypto accounts.</p>
-                    <p>- Fee<br><a href="https://support.bitwage.com/what-are-the-fees-to-use-bitwage" target="_blank">https://support.bitwage.com/what-are-the-fees-to-use-bitwage</a><br><a href="https://support.bitwage.com/bitwage-exchange-rate-spreads" target="_blank">https://support.bitwage.com/bitwage-exchange-rate-spreads</a><br><a href="https://bitwage.com/en-us/personal/personal-pricing" target="_blank">https://bitwage.com/en-us/personal/personal-pricing</a></p>
-                </div>
-            </details>
+    <details>
+        <summary>Bitwage - Invoicing service from Paraguay - 2.5%/3% fee for receiving PYG</summary>
+        <div class="content">
+            <p><a href="https://bitwage.com" target="_blank">https://bitwage.com</a></p>
+            <p>Useful for avoiding setting up an LLC in the US.</p>
+            <p>You can also receive EUR and send it to another EUR account; the fee in this case should be 1%.</p>
+            <p>You can only receive funds from business or crypto accounts.</p>
+            <p>- Fee</p>
+            <p><a href="https://support.bitwage.com/what-are-the-fees-to-use-bitwage" target="_blank">https://support.bitwage.com/what-are-the-fees-to-use-bitwage</a><br>
+            <a href="https://support.bitwage.com/bitwage-exchange-rate-spreads" target="_blank">https://support.bitwage.com/bitwage-exchange-rate-spreads</a><br>
+            <a href="https://bitwage.com/en-us/personal/personal-pricing" target="_blank">https://bitwage.com/en-us/personal/personal-pricing</a></p>
+        </div>
+    </details>
 
-            <details>
-                <summary>Some combinations and considerations:</summary>
-                <div class="content">
-                    <p>For the best exchange rate to get to Paraguay from crypto, without going through Paysend, but still using an exchange.</p>
-                    <p>Kraken with py residence, not LLC -> crypto -> 0.2% fee -> EUR -> wise -> fee approximately 0.458% -> USD -> fixed fee 1.3 USD -> Schwab -> card -> ATM (market exchange rate and ATM cashback fee)</p>
-                    <p>- With Uglycash<br>crypto -> defi fee 0.2% or less -> USDt or USDc -> uglycash -> USD -> fixed fee 2 USD -> Schwab -> card -> ATM (market exchange rate and ATM cashback fee)</p>
-                    <p>Kraken in this case is only useful if you start from EUR, and it's a 0.2% fee.</p>
-                    <p>Even the EUR -> USD exchange rate on uglycash doesn't seem bad, so you could also do:<br>EUR -> UglyCash -> USD -> fixed fee 2 USD -> Schwab -> card -> ATM (market exchange rate and ATM cashback fee)</p>
-                    <p>Uglycash currently also allows you to earn an 8% annual profit, so:<br>With 1,000 euros, which then become dollars, about 9 days to Recover the $2 in future fees for transferring to Schwab.</p>
-                    <p>So if the amount is higher, obviously fewer days. (With €2,000, about 4/5 days, etc.)</p>
-                    <p>With Schwab, which can also receive EUR transfers, and the USD exchange has a 1% fee, anything above 1% isn't worth it, unless you want to avoid banks and only go crypto -> cash.</p>
-                </div>
-            </details>
-        </section>
-    </main>
+    <details>
+        <summary>Some combinations and considerations</summary>
+        <div class="content">
+            <p>For the best exchange rate to get to Paraguay from crypto, without going through Paysend, but still using an exchange.</p>
+            <p>Kraken with py residence, not LLC -> crypto -> 0.2% fee -> EUR -> wise -> fee approximately 0.458% -> USD -> fixed fee 1.3 USD -> Schwab -> card -> ATM (market exchange rate and ATM cashback fee)</p>
+            <p>- With Uglycash<br>
+            crypto -> defi fee 0.2% or less -> USDt or USDc -> uglycash -> USD -> fixed fee 2 USD -> Schwab -> card -> ATM (market exchange rate and ATM cashback fee)</p>
+            <p>Kraken in this case is only useful if you start from EUR, and it's a 0.2% fee.</p>
+            <p>Even the EUR -> USD exchange rate on uglycash doesn't seem bad, so you could also do:</p>
+            <p>EUR -> UglyCash -> USD -> fixed fee 2 USD -> Schwab -> card -> ATM (market exchange rate and ATM cashback fee)</p>
+            <p>Uglycash currently also allows you to earn an 8% annual profit, so:</p>
+            <p>With 1,000 euros, which then become dollars, about 9 days to Recover the $2 in future fees for transferring to Schwab.</p>
+            <p>So if the amount is higher, obviously fewer days. (With €2,000, about 4/5 days, etc.)</p>
+            <p>With Schwab, which can also receive EUR transfers, and the USD exchange has a 1% fee, anything above 1% isn't worth it, unless you want to avoid banks and only go crypto -> cash.</p>
+        </div>
+    </details>
 
-    <footer>
-        <p>Document continuously updated • Not financial advice</p>
-    </footer>
+    <script>
+        const toggleBtn = document.getElementById('toggleAll');
+        let isOpen = false;
+
+        toggleBtn.addEventListener('click', () => {
+            isOpen = !isOpen;
+            document.querySelectorAll('details').forEach(details => {
+                details.open = isOpen;
+            });
+            toggleBtn.textContent = isOpen ? 'Close All' : 'Open All';
+        });
+    </script>
 </body>
 </html>
