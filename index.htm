@@ -99,13 +99,51 @@
             cursor: pointer;
             opacity: 0.5;
             font-size: 0.9em;
+            line-height: 1;
+            background: none;
+            border: none;
+            padding: 2px 5px;
+            border-radius: 4px;
+            color: inherit;
             user-select: none;
         }
         .copy-link:hover { opacity: 1; }
-        .copy-link.copied::after {
-            content: " copied!";
-            color: #0066cc;
-            font-size: 0.8em;
+        .copy-link:focus-visible {
+            opacity: 1;
+            outline: 2px solid #0066cc;
+            outline-offset: 1px;
+        }
+        /* toast di conferma copia */
+        #copyToast {
+            position: fixed;
+            bottom: 24px;
+            left: 50%;
+            transform: translateX(-50%) translateY(20px);
+            background: #0066cc;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.25s, transform 0.25s;
+            z-index: 10000;
+            max-width: 90vw;
+            text-align: center;
+            word-break: break-all;
+        }
+        #copyToast.show {
+            opacity: 1;
+            transform: translateX(-50%) translateY(0);
+        }
+        /* evidenzia la sezione raggiunta tramite link */
+        details.flash-target {
+            animation: flashHighlight 1.6s ease;
+        }
+        @keyframes flashHighlight {
+            0% { background: #fff7cc; }
+            100% { background: #fff; }
         }
         /* evita che la sezione finisca sotto la barra Google Translate quando si scrolla */
         details { scroll-margin-top: 16px; }
@@ -865,22 +903,60 @@ document.querySelectorAll('details').forEach(d => {
         d.id = unique;
     }
 
-    // 2. icona "copia link" accanto al titolo
-    const link = document.createElement('span');
+    // 2. pulsante "copia link" accanto al titolo (accessibile da tastiera)
+    const link = document.createElement('button');
+    link.type = 'button';
     link.className = 'copy-link';
     link.textContent = '🔗';
     link.title = 'Copy link to this section';
+    link.setAttribute('aria-label', 'Copy link to this section');
     link.addEventListener('click', (e) => {
         e.preventDefault();
         e.stopPropagation(); // non apre/chiude la sezione
-        const url = location.origin + location.pathname + '#' + d.id;
-        navigator.clipboard.writeText(url).then(() => {
-            link.classList.add('copied');
-            setTimeout(() => link.classList.remove('copied'), 1500);
-        });
+        copyLink(d.id);
     });
     summary.appendChild(link);
 });
+
+// --- Copia link con toast e fallback ---
+function showToast(msg) {
+    let toast = document.getElementById('copyToast');
+    if (!toast) {
+        toast = document.createElement('div');
+        toast.id = 'copyToast';
+        document.body.appendChild(toast);
+    }
+    toast.textContent = msg;
+    toast.classList.add('show');
+    clearTimeout(showToast._t);
+    showToast._t = setTimeout(() => toast.classList.remove('show'), 2000);
+}
+
+function fallbackCopy(text) {
+    try {
+        const ta = document.createElement('textarea');
+        ta.value = text;
+        ta.style.position = 'fixed';
+        ta.style.opacity = '0';
+        document.body.appendChild(ta);
+        ta.select();
+        const ok = document.execCommand('copy');
+        document.body.removeChild(ta);
+        if (ok) { showToast('Link copied!'); return; }
+    } catch (e) {}
+    showToast('Copy manually: ' + text);
+}
+
+function copyLink(id) {
+    const url = location.origin + location.pathname + '#' + id;
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(url)
+            .then(() => showToast('Link copied!'))
+            .catch(() => fallbackCopy(url));
+    } else {
+        fallbackCopy(url);
+    }
+}
 
 // 3. apre + scrolla alla sezione indicata nell'URL
 function openFromHash() {
@@ -890,6 +966,10 @@ function openFromHash() {
     if (el && el.tagName === 'DETAILS') {
         el.open = true;
         el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        // flash di evidenziazione (rimuovi+reflow per ritriggerare l'animazione)
+        el.classList.remove('flash-target');
+        void el.offsetWidth;
+        el.classList.add('flash-target');
     }
 }
 window.addEventListener('DOMContentLoaded', openFromHash);
