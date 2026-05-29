@@ -94,6 +94,21 @@
         strong {
             color: #222;
         }
+        .copy-link {
+            margin-left: 8px;
+            cursor: pointer;
+            opacity: 0.5;
+            font-size: 0.9em;
+            user-select: none;
+        }
+        .copy-link:hover { opacity: 1; }
+        .copy-link.copied::after {
+            content: " copiato!";
+            color: #0066cc;
+            font-size: 0.8em;
+        }
+        /* evita che la sezione finisca sotto la barra Google Translate quando si scrolla */
+        details { scroll-margin-top: 16px; }
     </style>
 </head>
 <body>
@@ -822,18 +837,67 @@
 <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
     <script>
-        const toggleBtn = document.getElementById('toggleAll');
-        let isOpen = false;
+const toggleBtn = document.getElementById('toggleAll');
+let isOpen = false;
+toggleBtn.addEventListener('click', () => {
+    isOpen = !isOpen;
+    document.querySelectorAll('details').forEach(d => { d.open = isOpen; });
+    toggleBtn.textContent = isOpen ? 'Close All' : 'Open All';
+});
 
-        toggleBtn.addEventListener('click', () => {
-            isOpen = !isOpen;
-            document.querySelectorAll('details').forEach(details => {
-                details.open = isOpen;
-            });
-            toggleBtn.textContent = isOpen ? 'Close All' : 'Open All';
+// --- Deep link alle sezioni ---
+const usedIds = new Set();
+
+document.querySelectorAll('details').forEach(d => {
+    const summary = d.querySelector('summary');
+    if (!summary) return;
+
+    // 1. genera un id univoco dal nome del servizio
+    if (!d.id) {
+        let slug = summary.textContent.trim().toLowerCase()
+            .split(/[-–—(]/)[0]
+            .replace(/[^a-z0-9]+/g, '-')
+            .replace(/^-+|-+$/g, '');
+        if (!slug) slug = 'section';
+        let unique = slug, n = 2;
+        while (usedIds.has(unique)) unique = slug + '-' + (n++);
+        usedIds.add(unique);
+        d.id = unique;
+    }
+
+    // 2. icona "copia link" accanto al titolo
+    const link = document.createElement('span');
+    link.className = 'copy-link';
+    link.textContent = '🔗';
+    link.title = 'Copy link to this section';
+    link.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation(); // non apre/chiude la sezione
+        const url = location.origin + location.pathname + '#' + d.id;
+        navigator.clipboard.writeText(url).then(() => {
+            link.classList.add('copied');
+            setTimeout(() => link.classList.remove('copied'), 1500);
         });
-        function googleTranslateElementInit() {
-  new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+    });
+    summary.appendChild(link);
+});
+
+// 3. apre + scrolla alla sezione indicata nell'URL
+function openFromHash() {
+    const id = decodeURIComponent(location.hash.slice(1));
+    if (!id) return;
+    const el = document.getElementById(id);
+    if (el && el.tagName === 'DETAILS') {
+        el.open = true;
+        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+}
+window.addEventListener('DOMContentLoaded', openFromHash);
+window.addEventListener('hashchange', openFromHash);
+
+// Google Translate (invariato)
+function googleTranslateElementInit() {
+    new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
 }
     </script>
 </body>
